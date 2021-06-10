@@ -26,13 +26,13 @@ $app = new Laravel\Lumen\Application(
 $app->withFacades();
 
 $app->withEloquent();
-$app->configure('database');
+
 /**
  * Registering config files
  */
 $app->configure('services');
 $app->configure('auth');
-
+$app->configure('database');
 
 /*
 |--------------------------------------------------------------------------
