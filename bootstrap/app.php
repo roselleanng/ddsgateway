@@ -32,7 +32,7 @@ $app->configure('database');
  */
 $app->configure('services');
 $app->configure('auth');
-$app->configure('database');
+
 
 /*
 |--------------------------------------------------------------------------
