@@ -1,77 +1,54 @@
 <?php
-    namespace App\Services;
-    use App\Traits\ConsumesExternalService;
 
-    class User2Service{
-        
-        use ConsumesExternalService;
-        /**
-        * The base uri to consume the User2 Service
-        * @var string
-        */
-        
-        public $baseUri;
+namespace App\Services;
 
-        /**
-         * The secret to consume the User1 Service
-         * @var string
-         */
-        
-        public $secret;
-        
-        public function __construct()
-        {
-            $this->baseUri = config('services.users2.base_uri');
-            $this->secret = config('services.users2.secret');
-        }
+use App\Traits\ConsumesExternalService;
 
-        /**
-        * Obtain the full list of Users from User1 Site
-        * @return string
-        */
+class User2Service {
 
-        public function obtainUsers()
-        {
-            return $this->performRequest('GET', '/users'); 
-        }
+    use ConsumesExternalService;
 
-        /**
-        * Create one user using the User2 service
-        * @return string
-        */
+    /** 
+     * The base uri to consume the User1 Service
+     * @var string
+     */
 
-        public function createUser($data)
-        {
-            return $this->performRequest('POST', '/users', $data);
-        }
+     public $baseUri;
 
-        /**
-        * Obtain the full list of Users from User2 Site
-        * @return string
-        */
+    /** 
+     * The srecret to consume the User2 Service
+     * @var string
+     */
+    public $secret;
 
-        public function obtainUser($id)
-        {
-            return $this->performRequest('GET', "/users/{$id}");
-        }
-        
-        /**
-        * Update an instance of user2 using the User2 service
-        * @return string
-        */
-        
-        public function editUser($data, $id)
-        {
-        return $this->performRequest('PUT', "/users/{$id}", $data);
-        }
+     public function __construct()
+     {
+         $this->baseUri = config('services.users2.base_uri');
+         $this->secret = config('services.users2.secret');
+     }
 
-        /**
-        * Remove an existing user
-        * @return Illuminate\Http\Response
-        */
+     public function obtainUsers2()
+     {
+         return $this->performRequest('GET','/users');
+     }
 
-        public function deleteUser($id)
-        {
-            return $this->performRequest('DELETE', "/users/{$id}");
-        }
-    }
+     public function createUser2($data)
+     {
+         return $this->performRequest('POST','/users', $data);
+     }
+
+     public function obtainUser2($id)
+     {
+         return $this->performRequest('GET',"/users/{$id}");
+     }
+
+     public function editUser2($data,$id)
+     {
+         return $this->performRequest('PUT',"/users/{$id}", $data);
+     }
+
+     public function deleteUser2($id)
+     {
+         return $this->performRequest('DELETE', "/users/{$id}");
+     }
+}
