@@ -35,7 +35,7 @@
         public function index()
         {
             //
-            return $this->successResponse($this->user2Service->obtainUsers());
+            return $this->successResponse($this->user2Service->obtainUsers2());
         }
 
 
