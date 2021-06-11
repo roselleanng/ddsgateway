@@ -30,7 +30,7 @@ class User2Service{
      * Obtain the full list of Users from User2 Site
      * @return string
      */
-    public function obtainUsers()
+    public function obtainUsers2()
     {
         return $this->performRequest('GET','/users');
     }
@@ -39,7 +39,7 @@ class User2Service{
      * Create one user using the User2 service
      * @return string
      */
-    public function createUser($data)
+    public function createUser2($data)
     {
         return $this->performRequest('POST', '/users', $data);
     }
@@ -53,7 +53,7 @@ class User2Service{
      * Obtain one single user from the User2 service
      * @return string
      */
-    public function obtainUser($id)
+    public function obtainUser2($id)
     {
         return $this->performRequest('GET', "/users/{$id}");
     }
@@ -62,7 +62,7 @@ class User2Service{
      * Update an instance of user2 using the User2 service
      * @return string
      */
-    public function editUser($data, $id)
+    public function editUser2($data, $id)
     {
         return $this->performRequest('PUT', "/users/{$id}", $data);
     }
@@ -71,7 +71,7 @@ class User2Service{
      * Remove a single user using the User2 service
      * @return string
      */
-    public function deleteUser($id)
+    public function deleteUser2($id)
     {
         return $this->performRequest('DELETE', "/users/{$id}");
     }
